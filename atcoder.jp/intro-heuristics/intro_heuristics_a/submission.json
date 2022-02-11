@@ -1,0 +1,12 @@
+{
+	"id": 29225351,
+	"epoch_second": 1644595177,
+	"problem_id": "intro_heuristics_a",
+	"contest_id": "intro-heuristics",
+	"user_id": "cl17",
+	"language": "Rust (1.42.0)",
+	"point": 101232812,
+	"length": 2800,
+	"result": "AC",
+	"execution_time": 1956
+}
