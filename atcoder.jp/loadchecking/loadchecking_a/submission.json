@@ -1,0 +1,12 @@
+{
+	"id": 29267665,
+	"epoch_second": 1644747198,
+	"problem_id": "loadchecking_a",
+	"contest_id": "loadchecking",
+	"user_id": "cl17",
+	"language": "C++ (GCC 9.2.1)",
+	"point": 884,
+	"length": 956,
+	"result": "AC",
+	"execution_time": 9
+}
