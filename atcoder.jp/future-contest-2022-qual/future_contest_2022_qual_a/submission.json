@@ -1,0 +1,12 @@
+{
+	"id": 32588117,
+	"epoch_second": 1655630320,
+	"problem_id": "future_contest_2022_qual_a",
+	"contest_id": "future-contest-2022-qual",
+	"user_id": "cl17",
+	"language": "Rust (1.42.0)",
+	"point": 73741,
+	"length": 5217,
+	"result": "AC",
+	"execution_time": 96
+}
