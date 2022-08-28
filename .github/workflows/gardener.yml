@@ -29,9 +29,9 @@ jobs:
         cd ../../../.procon-gardener
         jq '.atcoder.repository_path|="."' config.json > tmp
         mv tmp config.json
-        jq '.atcoder.user_id|="$ATCODER_USERNAME"' config.json > tmp
+        jq '.atcoder.user_id|=$ATCODER_USERNAME' config.json > tmp
         mv tmp config.json
-        jq '.atcoder.user_email|="$ATCODER_EMAIL"' config.json > tmp
+        jq '.atcoder.user_email|=$ATCODER_EMAIL' config.json > tmp
         mv tmp config.json
         cat config.json
 
