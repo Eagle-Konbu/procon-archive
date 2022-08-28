@@ -7,7 +7,7 @@ on:
 
 jobs:
 
-  build:
+  push:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -23,13 +23,16 @@ jobs:
         procon-gardener init
 
     - name: Edit config.json
+      env:
+        ATCODER_USERNAME: ${{ secrets.ATCODER_USERNAME }}
+        ATCODER_EMAIL: ${{ secrets.ATCODER_EMAIL }}
       run: |
         cd ../../../.procon-gardener
         jq '.atcoder.repository_path|="."' config.json > tmp
         mv tmp config.json
-        jq '.atcoder.user_id|="cl17"' config.json > tmp
+        jq '.atcoder.user_id|="$ATCODER_USERNAME"' config.json > tmp
         mv tmp config.json
-        jq '.atcoder.user_email|="a18.f7ft@g.chuo-u.ac.jp"' config.json > tmp
+        jq '.atcoder.user_email|="$ATCODER_EMAIL"' config.json > tmp
         mv tmp config.json
 
     - name: Archive
