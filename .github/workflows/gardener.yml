@@ -21,20 +21,12 @@ jobs:
         go install github.com/togatoga/procon-gardener@latest
         procon-gardener init
 
-    - name: Edit config.json
-      env:
-        ATCODER_USERNAME: ${{ secrets.ATCODER_USERNAME }}
-        ATCODER_EMAIL: ${{ secrets.ATCODER_EMAIL }}
-      run: |
-        echo $ATCODER_USERNAME
-        cd ../../../.procon-gardener
-        jq '.atcoder.repository_path|="."' config.json > tmp
-        mv tmp config.json
-        jq '.atcoder.user_id|=\"${{ secrets.ATCODER_USERNAME }}\"' config.json > tmp
-        mv tmp config.json
-        jq '.atcoder.user_email|=\"${{ secrets.ATCODER_EMAIL }}\"' config.json > tmp
-        mv tmp config.json
-        cat config.json
+    - name: Create config.json
+      uses: jsdaniell/create-json@1.1.2
+      with:
+        name: config.json
+        json: '{"atcoder": {"repository_path": ".", "user_id": "${{ secrets.ATCODER_USERNAME }}", "user_email": "${{ secrets.ATCODER_EMAIL }}"}}'
+        dir: '../../../.procon-gardener'
 
     - name: Archive
       run: procon-gardener archive
